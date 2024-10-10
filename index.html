@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop in Style</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: white;
+            margin: 0;
+            padding: 20px;
+        }
+
+        a {
+            text-decoration: none; /* Убирает подчеркивание */
+            color: inherit; /* Оставляет цвет текста таким же, как и у родительского элемента */
+        }
+
+        a:hover {
+            text-decoration: none; /* Убирает подчеркивание при наведении */
+            color: inherit; /* Оставляет цвет таким же при наведении */
+        }
+
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .product {
+            text-align: center;
+            width: 23%; /* ширина карточки товара для десктопа */
+            margin-bottom: 40px;
+        }
+
+        .product img {
+            width: 100%;
+            border-radius: 10px;
+            filter: blur(10px);
+            opacity: 0;
+            transition: filter 1s ease, opacity 1s ease;
+        }
+
+        .product h3 {
+            margin: 15px 0 5px;
+            font-size: 16px;
+            color: black;
+        }
+
+        .product p {
+            color: #888;
+            font-size: 14px;
+        }
+
+        .product .price {
+            font-size: 18px;
+            font-weight: bold;
+            color: black;
+        }
+
+        .product .availability {
+            color: red;
+            font-size: 14px;
+        }
+
+        /* Медиазапросы для адаптации под мобильные устройства */
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .product {
+                width: 90%; /* ширина карточки товара для мобильных устройств */
+                margin-bottom: 20px;
+            }
+        }
+
+        /* Медиазапрос для маленьких экранов (меньше 480px) */
+        @media (max-width: 480px) {
+            .product h3 {
+                font-size: 14px;
+            }
+
+            .product p {
+                font-size: 12px;
+            }
+
+            .product .price {
+                font-size: 16px;
+            }
+
+            .product .availability {
+                font-size: 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Shop</h1>
+
+    <div class="container">
+        <div class="product">
+            <a href="product1.html">
+                <img src="./hoodiet.png" alt="Product 1" onload="imageLoaded(this)">
+                <h3>VSC HOODIE</h3>
+                <p>Отправка 2-4 рабочих дня.</p>
+                <p class="price">5 690 ₽</p>
+                <p class="availability">Нет в наличии</p>
+            </a>
+        </div>
+        <div class="product">
+            <a href="product2.html">
+                <img src="./hoodiet.png" alt="Product 2" onload="imageLoaded(this)">
+                <h3>VSC HOODIE</h3>
+                <p>Отправка 2-4 рабочих дня.</p>
+                <p class="price">5 690 ₽</p>
+                <p class="availability">Нет в наличии</p>
+            </a>
+        </div>
+        <div class="product">
+            <a href="product3.html">
+                <img src="./hoodiet.png" alt="Product 3" onload="imageLoaded(this)">
+                <h3>VSC HOODIE</h3>
+                <p>Отправка 2-4 рабочих дня.</p>
+                <p class="price">5 690 ₽</p>
+                <p class="availability">Нет в наличии</p>
+            </a>
+        </div>
+        <div class="product">
+            <a href="product4.html">
+                <img src="./hoodiet.png" alt="Product 4" onload="imageLoaded(this)">
+                <h3>VSC HOODIE</h3>
+                <p>Отправка 2-4 рабочих дня.</p>
+                <p class="price">5 690 ₽</p>
+                <p class="availability">Нет в наличии</p>
+            </a>
+        </div>
+    </div>
+
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('./service-worker.js')
+                    .then(registration => {
+                        console.log('Service Worker registered with scope:', registration.scope);
+                    }).catch(err => {
+                        console.log('Service Worker registration failed:', err);
+                    });
+            });
+        }
+
+        function imageLoaded(img) {
+            img.style.filter = 'blur(0)';
+            img.style.opacity = '1';
+        }
+    </script>
+    
+</body>
+</html>
