@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./tshirt.css">
+    <title>VSC T-SHIRT</title>
+</head>
+<body>
+
+    <div class="product-card">
+        <span class="back-link"><a href="../index.html">← Назад</a></span>
+        
+        <div class="product-image">
+            <img id="main-image" src="./tshirt.png" alt="VSC T-SHIRT">
+        </div>
+        
+        <div class="gallery">
+            <img src="./tshirt.png" alt="VSC T-SHIRT">
+            <img src="./tshirt.png" alt="VSC T-SHIRT">
+            <img src="./tshirt.png" alt="VSC T-SHIRT">
+        </div>
+        
+        <div class="product-info">
+            <h1>VSC T-SHIRT V1 BLACK</h1>
+            <div class="price">6 666 руб.</div>
+            <div class="payment-options">
+                4 платежа по *** р.
+            </div>
+            <div>
+                <label for="size">Размер</label>
+                <select id="size">
+                    <option value="S">S (160-169)</option>
+                    <option value="M">M (170-179)</option>
+                    <option value="L">L (180-189)</option>
+                </select>
+            </div>
+            <button>Купить</button>
+            <div class="product-description">
+                Ветровка выполнена из водоотталкивающей итальянской ткани дюспо.<br>
+                Температурный режим: от 0 до +15.<br>
+                Металлическая фурнитура.<br>
+                Вышивка плотной нитью.<br>
+                Плотный кант. Вшитая белая нить спереди и сзади.<br><br>
+                Рост модели: 177 см<br>
+                Размер: M<br><br>
+                Ограниченный тираж.
+            </div>
+        </div>
+    </div>
+
+    <!-- Добавляем defer для отсрочки выполнения скрипта -->
+    <script defer>
+        if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.getRegistrations().then(registrations => {
+            registrations.forEach(registration => {
+                registration.unregister();
+            });
+        });
+}
+        // Функция для смены изображения при нажатии на миниатюру
+        function changeImage(element) {
+            var mainImage = document.getElementById('main-image');
+            mainImage.style.opacity = '0';
+            setTimeout(function() {
+                mainImage.src = element.src;
+                mainImage.style.opacity = '1';
+            }, 200);
+        }
+    </script>
+
+</body>
+</html>
