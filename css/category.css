@@ -76,7 +76,7 @@ a:hover {
 }
 
 .sidebar ul li {
-    margin-bottom: 15px;
+    margin-bottom: initial;
 }
 
 .sidebar ul li a {
