@@ -1,10 +1,11 @@
 @font-face {
-    font-family: 'CourierNewBold';
-    src: url('./fonts/CourierNewBold.ttf') format('truetype'); /* Обновите путь к шрифту */
+    font-family: 'CourierNew';
+    src: url('./fonts/CourierNew.woff') format('truetype');
+
 }
 
 body {
-    font-family: 'CourierNewBold', 'Courier New', Courier, monospace; 
+    font-family: 'CourierNew', 'Courier New', Courier, monospace; 
     background-color: white;
     margin: 0;
     padding: 0;
@@ -51,11 +52,10 @@ a:hover {
     color: inherit;
 }
 
-/* Боковая панель категорий */
+
 .sidebar {
     width: 250px;
     background-color: #ffffff;
-    padding: 20px;
     height: 100vh;
     position: fixed;
     top: 0;
@@ -75,7 +75,7 @@ a:hover {
 }
 
 .sidebar ul li {
-    margin-bottom: 15px;
+    margin-bottom: initial; /* Добавляем минимальный отступ между элементами */
 }
 
 .sidebar ul li a {
@@ -83,7 +83,7 @@ a:hover {
     font-weight: bold;
     color: #000;
     display: block; /* Чтобы весь элемент был кликабельным */
-    padding: 10px; /* Добавляем отступы для кликабельной области */
+    padding: 5px; /* Добавляем отступы для кликабельной области */
     border-radius: 5px; /* Закругляем углы */
 }
 
@@ -115,12 +115,13 @@ a:hover {
 
 .product img {
     width: 100%;
-    max-width: 250px;
+    max-width: 550px;
     border-radius: 10px;
     filter: none; /* Убираем размытие */
     opacity: 1; /* Убираем прозрачность */
     transition: none; /* Убираем переход */
 }
+
 
 .product h3 {
     margin: 15px 0 5px;
@@ -196,11 +197,11 @@ a:hover {
     }
 
     .container {
-        grid-template-columns: repeat(2, 1fr); /* 2 товара в ряд */
+        grid-template-columns: repeat(1, 1fr); /*  товара в ряд */
     }
 
     .product img {
-        max-width: 150px; /* Уменьшение размеров на мобильной версии */
+        max-width: 300px; /* Уменьшение размеров на мобильной версии */
     }
 
     .product h3 {
@@ -219,3 +220,80 @@ a:hover {
         font-size: 12px;
     }
 }
+
+
+
+  
+  .newblock {
+    display: flex;
+    justify-content: flex-start; /* Выравнивание по левому краю */
+    align-items: flex-start; /* Выравнивание по верхнему краю */
+    width: 100vw; /* Ширина блока на весь экран */
+    overflow: hidden; /* Скрываем всё, что выходит за пределы */
+    background-color: #ffffff;
+    height: auto; /* Высота блока */
+    padding: 20px; /* Отступы внутри блока */
+    box-sizing: border-box; /* Учитываем padding в ширине блока */
+}
+
+    .content {
+        color: #fff; /* Цвет текста */
+    }
+
+    .title {
+        font-size: 2.5rem; /* Размер шрифта заголовка */
+        color: #ff0000;
+        margin: 0; /* Убираем отступы */
+    }
+
+    .description {
+        font-size: 1.2rem; /* Размер шрифта описания */
+        margin: 10px 0 0; /* Отступ сверху и снизу */
+    }
+
+    @media (max-width: 768px) { /* Стили для мобильных устройств */
+        .title {
+            font-size: 1.8rem; /* Уменьшенный размер заголовка */
+        }
+        
+        .description {
+            font-size: 1rem; /* Уменьшенный размер описания */
+        }
+        
+        .newblock {
+            height: auto; /* Автоматическая высота на мобильных устройствах */
+        }
+    }
+
+
+  .marqueeNew {
+    display: flex;
+    width: 100vw; /* Ширина блока на весь экран */
+    overflow: hidden; /* Скрываем всё, что выходит за пределы */
+    background-color: #000000;
+    height: 50px; /* Высота блока */
+    align-items: center; /* Центрирование текста по вертикали */
+  }
+  
+  .marqueeNew-content {
+    display: inline-block;
+    white-space: nowrap; /* Текст не переносится на новую строку */
+    font-size: 30px;
+    color: #fcfcfc;
+    font-weight: bold;
+    animation: marqueeNew 15s linear infinite; /* Бесконечная анимация, увеличено время */
+  }
+  
+  @keyframes marqueeNew {
+    0% {
+      transform: translateX(0); /* Начальная позиция */
+    }
+    100% {
+      transform: translateX(-50%); /* Полный сдвиг на половину ширины блока */
+    }
+  }
+  
+  
+  .marqueeNew-content:not(:first-child) {
+    margin-left: -10px; /* Уменьшаем пробел между блоками текста */
+  }

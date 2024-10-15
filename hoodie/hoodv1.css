@@ -1,6 +1,7 @@
 @font-face {
-    font-family: 'CourierNewBold';
-    src: url('./fonts/CourierNewBold.ttf') format('truetype'); /* Обновите путь к шрифту */
+    font-family: 'CourierNew';
+    src: url('./fonts/CourierNew.woff') format('truetype');
+
 }
 * {
     margin: 0;
@@ -8,7 +9,7 @@
     box-sizing: border-box;
 }
 body {
-    font-family: 'CourierNewBold', 'Courier New', Courier, monospace; 
+    font-family: 'CourierNew', 'Courier New', Courier, monospace; 
     background-color: #fff;
 }
 .product-card {

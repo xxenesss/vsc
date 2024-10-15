@@ -39,7 +39,7 @@
             <div class="container">
                 <div class="product">
                     <a href="../tshirt/tshirt.html">
-                        <img src="../tshirt/tshirt.png" alt="Product 1">
+                        <img src="../tshirt/tshirt.png" alt="Product 1" data-hover="../tshirt/tshirt_noblur.png">
                         <h3>VSC T-SHIRT</h3>
                         <p>Отправка 2-4 рабочих дня.</p>
                         <p class="price">6 666 руб.</p>
@@ -48,7 +48,7 @@
                 </div>
                 <div class="product">
                     <a href="../tshirt/tshirt.html">
-                        <img src="../tshirt/tshirt.png" alt="Product 2">
+                        <img src="../tshirt/tshirt.png" alt="Product 2" data-hover="../tshirt/tshirt_noblur.png">
                         <h3>VSC T-SHIRT</h3>
                         <p>Отправка 2-4 рабочих дня.</p>
                         <p class="price">6 666 руб.</p>
@@ -57,7 +57,7 @@
                 </div>
                 <div class="product">
                     <a href="../tshirt/tshirt.html">
-                        <img src="../tshirt/tshirt.png" alt="Product 3">
+                        <img src="../tshirt/tshirt.png" alt="Product 3"data-hover="../tshirt/tshirt_noblur.png">
                         <h3>VSC T-SHIRT</h3>
                         <p>Отправка 2-4 рабочих дня.</p>
                         <p class="price">6 666 руб.</p>
@@ -67,6 +67,21 @@
             </div>
         </div>
     </div>
+
+    <script>
+        document.querySelectorAll('.product img').forEach(img => {
+            const originalSrc = img.src;
+            const hoverSrc = img.getAttribute('data-hover');
+    
+            img.addEventListener('mouseover', () => {
+                img.src = hoverSrc; // Меняем изображение при наведении
+            });
+    
+            img.addEventListener('mouseout', () => {
+                img.src = originalSrc; // Возвращаем исходное изображение при уходе курсора
+            });
+        });
+    </script>
 
     <script>
         const sidebar = document.getElementById('sidebar');

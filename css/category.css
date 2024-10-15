@@ -1,10 +1,12 @@
 @font-face {
     font-family: 'CourierNewBold';
-    src: url('./fonts/CourierNewBold.ttf') format('truetype'); /* Обновите путь к шрифту */
+    src: url('../fonts/CourierNewBold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
 }
 
 body {
-    font-family: 'CourierNewBold', 'Courier New', Courier, monospace; 
+    font-family: 'CourierNewBold', sans-serif;
     background-color: white;
     margin: 0;
     padding: 0;

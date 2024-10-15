@@ -49,25 +49,5 @@
         </div>
     </div>
 
-    <!-- Добавляем defer для отсрочки выполнения скрипта -->
-    <script defer>
-        if ('serviceWorker' in navigator) {
-        navigator.serviceWorker.getRegistrations().then(registrations => {
-            registrations.forEach(registration => {
-                registration.unregister();
-            });
-        });
-}
-        // Функция для смены изображения при нажатии на миниатюру
-        function changeImage(element) {
-            var mainImage = document.getElementById('main-image');
-            mainImage.style.opacity = '0';
-            setTimeout(function() {
-                mainImage.src = element.src;
-                mainImage.style.opacity = '1';
-            }, 200);
-        }
-    </script>
-
 </body>
 </html>

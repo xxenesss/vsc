@@ -39,7 +39,7 @@
             <div class="container">
                 <div class="product">
                     <a href="./hoodie/hoodv1.html">
-                        <img src="./hoodie/hoodiev2.png" alt="Product 1">
+                        <img src="./hoodie/hoodieblur.png" alt="Product 1" data-hover="./hoodie/hoodie.png">
                         <h3>VSC HOODIE</h3>
                         <p>Отправка 2-4 рабочих дня.</p>
                         <p class="price">5 555 руб.</p>
@@ -48,7 +48,7 @@
                 </div>
                 <div class="product">
                     <a href="./hoodie/hoodv1.html">
-                        <img src="./hoodie/hoodiev2.png" alt="Product 2">
+                        <img src="./hoodie/hoodieblur.png" alt="Product 2" data-hover="./hoodie/hoodie.png">
                         <h3>VSC HOODIE</h3>
                         <p>Отправка 2-4 рабочих дня.</p>
                         <p class="price">5 555 руб.</p>
@@ -57,7 +57,7 @@
                 </div>
                 <div class="product">
                     <a href="./hoodie/hoodv1.html">
-                        <img src="./hoodie/hoodiev2.png" alt="Product 3">
+                        <img src="./hoodie/hoodieblur.png" alt="Product 3" data-hover="./hoodie/hoodie.png">
                         <h3>VSC HOODIE</h3>
                         <p>Отправка 2-4 рабочих дня.</p>
                         <p class="price">5 555 руб.</p>
@@ -66,7 +66,7 @@
                 </div>
                 <div class="product">
                     <a href="./tshirt/tshirt.html">
-                        <img src="./tshirt/tshirt.png" alt="Product 4">
+                        <img src="./tshirt/tshirt.png" alt="Product 4" data-hover="./tshirt/tshirt_noblur.png">
                         <h3>VSC T-SHIRT</h3>
                         <p>Отправка 2-4 рабочих дня.</p>
                         <p class="price">6 666 руб.</p>
@@ -75,7 +75,7 @@
                 </div>
                 <div class="product">
                     <a href="./tshirt/tshirt.html">
-                        <img src="./tshirt/tshirt.png" alt="Product 5">
+                        <img src="./tshirt/tshirt.png" alt="Product 5" data-hover="./tshirt/tshirt_noblur.png">
                         <h3>VSC T-SHIRT</h3>
                         <p>Отправка 2-4 рабочих дня.</p>
                         <p class="price">6 666 руб.</p>
@@ -84,7 +84,7 @@
                 </div>
                 <div class="product">
                     <a href="./tshirt/tshirt.html">
-                        <img src="./tshirt/tshirt.png" alt="Product 6">
+                        <img src="./tshirt/tshirt.png" alt="Product 6" data-hover="./tshirt/tshirt_noblur.png">
                         <h3>VSC T-SHIRT</h3>
                         <p>Отправка 2-4 рабочих дня.</p>
                         <p class="price">6 666 руб.</p>
@@ -96,6 +96,38 @@
     </div>
 
     <script>
+        document.querySelectorAll('.product img').forEach(img => {
+            const originalSrc = img.src;
+            const hoverSrc = img.getAttribute('data-hover');
+    
+            img.addEventListener('mouseover', () => {
+                img.src = hoverSrc; // Меняем изображение при наведении
+            });
+    
+            img.addEventListener('mouseout', () => {
+                img.src = originalSrc; // Возвращаем исходное изображение при уходе курсора
+            });
+        });
+    </script>
+    
+
+    <div class="marqueeNew">
+        <div class="marqueeNew-content">
+        VSC VSC VSC VSC VSC VSC VSC VSC VSC VSC VSC VSC VSC VSC VSC VSC&nbsp;
+        </div>
+        <div class="marqueeNew-content">
+        &nbsp;VSC VSC VSC VSC VSC VSC VSC VSC VSC VSC VSC VSC VSC VSC VSC VSC
+        </div>
+    </div>
+
+    <div class="newblock">
+        <div id="absolute">© Visuals Community 2024</div>
+    </div>
+
+
+
+    <script>
+        
         const sidebar = document.getElementById('sidebar');
         const overlay = document.getElementById('overlay');
         const hamburger = document.getElementById('hamburger');
