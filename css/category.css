@@ -1,12 +1,11 @@
 @font-face {
-    font-family: 'CourierNewBold';
-    src: url('../fonts/CourierNewBold.ttf') format('truetype');
-    font-weight: bold;
-    font-style: normal;
+    font-family: 'CourierNew';
+    src: url('./fonts/CourierNew.woff') format('truetype');
+
 }
 
 body {
-    font-family: 'CourierNewBold', sans-serif;
+    font-family: 'CourierNew', 'Courier New', Courier, monospace; 
     background-color: white;
     margin: 0;
     padding: 0;
