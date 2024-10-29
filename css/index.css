@@ -15,15 +15,15 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px;
-    background-color: #f7f7f7;
+    padding: 10px;
+    background-color: #fdfdfd00;
     z-index: 1001; /* Поверх боковой панели */
     position: relative;
 }
 
-.header h1 {
+.header img {
     margin: 0;
-    font-size: 24px;
+    height: 45px; /* Set height to 70px */
     z-index: 1001; /* Чтобы текст не перекрывался */
 }
 
@@ -70,8 +70,8 @@ a:hover {
 
 .sidebar ul {
     list-style: none;
-    padding: 0;
-    margin: 70px 0; /* Увеличиваем отступ сверху */
+    padding: 10px;
+    margin: 300px 0;
 }
 
 .sidebar ul li {
@@ -148,9 +148,12 @@ a:hover {
 /* Кнопка гамбургер для ПК и мобильных устройств */
 .hamburger {
     display: flex;
-    flex-direction: column;
+    flex-direction: column-reverse;
     cursor: pointer;
-    z-index: 1001; /* Чтобы кнопка не была перекрыта */
+    z-index: 1001;
+    position: absolute;
+    top: 15px;
+    right: 40px;
 }
 
 .hamburger div {
